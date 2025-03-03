@@ -28,11 +28,14 @@ searchButton.addEventListener("click", () => {
         weatherResult.textContent = "City not found. Please try again.";
       } else {
         const { temperature, weather_descriptions, humidity } = data.current;
+        const{name, country} = data.location;
         weatherResult.innerHTML = `
           <strong>${city}</strong><br>
           Temperature: ${temperature}°C<br>
           Condition: ${weather_descriptions[0]}<br>
-          Humidity: ${humidity}%
+          Humidity: ${humidity}%<br>
+           name: ${name}<br>
+           country: ${country}
         `;
         console.log("Data", data);
       }
